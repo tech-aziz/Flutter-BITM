@@ -1,4 +1,6 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bitm/screens/first_page.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class WidgetPractice extends StatefulWidget {
@@ -75,8 +77,13 @@ class _WidgetPracticeState extends State<WidgetPractice> {
                     // style: DefaultTextStyle.of(context).style,
                     children: [
                       TextSpan(
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => FirstPage()));
+                            },
                           text: 'Sign Up !',
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
                               color: Colors.blue)),
