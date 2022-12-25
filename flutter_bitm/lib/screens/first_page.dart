@@ -9,7 +9,7 @@ class FirstPage extends StatefulWidget {
 }
 
 class _FirstPageState extends State<FirstPage> {
-  List studentInfo = [
+  List<Map<String, dynamic>> studentInfo = [
     {
       'name': 'arun',
       'gender': 'Male',

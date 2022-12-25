@@ -1,7 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bitm/screens/first_page.dart';
-import 'package:flutter_bitm/screens/home_page.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class WidgetPractice extends StatefulWidget {
@@ -14,6 +13,8 @@ class WidgetPractice extends StatefulWidget {
 class _WidgetPracticeState extends State<WidgetPractice> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  // GlobalKey<FormState> formKey = new GlobalKey();
+  // GlobalKey<FormState> ourKey = GlobalKey();
   final _userKey = GlobalKey<FormState>();
 
   @override
@@ -51,7 +52,11 @@ class _WidgetPracticeState extends State<WidgetPractice> {
                   keyboardType: TextInputType.emailAddress,
                   textDirection: TextDirection.ltr,
                   textAlign: TextAlign.start,
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                      decoration: TextDecoration.none,
+                      decorationThickness: 0,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold),
                   decoration: InputDecoration(
                       prefixIcon: Icon(Icons.person),
                       label: Text('Email'),
@@ -95,8 +100,7 @@ class _WidgetPracticeState extends State<WidgetPractice> {
                           if (_userKey.currentState!.validate()) {
                             Navigator.of(context).push(MaterialPageRoute(
                                 builder: (context) => FirstPage()));
-                          }
-                          else{
+                          } else {
                             return;
                           }
                         },
