@@ -26,10 +26,7 @@ class _SecondPageState extends State<SecondPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text('Student Information length'),
-      ),
+      
       body: Column(
         children: [
           Expanded(

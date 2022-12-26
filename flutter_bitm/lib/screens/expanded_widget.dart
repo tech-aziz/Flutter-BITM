@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bitm/screens/textCustomWidget.dart';
-
 class ExpandedWidget extends StatefulWidget {
   const ExpandedWidget({super.key});
 
@@ -9,6 +8,7 @@ class ExpandedWidget extends StatefulWidget {
 }
 
 class _ExpandedWidgetState extends State<ExpandedWidget> {
+
   final List<Widget> fruits = [
     Text('Banana'),
     Text('Apple'),
@@ -24,35 +24,14 @@ class _ExpandedWidgetState extends State<ExpandedWidget> {
   //All Veriables
   bool switchOn = false;
 
+
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 4,
-      child: Scaffold(
-        appBar: AppBar(
-          elevation: 0,
-          centerTitle: true,
-          title: Text('Expanded Widget'),
-          bottom: TabBar(tabs: [
-            Tab(    
-              icon: Icon(Icons.home),
-              text: 'Home',
-            ),
-            Tab(
-              icon: Icon(Icons.person),
-              text: 'People',
-            ),
-            Tab(
-              icon: Icon(Icons.share),
-              text: 'Share',
-            ),
-            Tab(
-              icon: Icon(Icons.settings),
-              text: 'Setting',
-            ),
-          ]),
-        ),
-        body: Padding(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Expanded widget'),
+      ),
+      body: Padding(
           padding: EdgeInsets.all(12),
           child: Column(
             children: [
@@ -262,7 +241,6 @@ class _ExpandedWidgetState extends State<ExpandedWidget> {
             ],
           ),
         ),
-      ),
     );
   }
 }

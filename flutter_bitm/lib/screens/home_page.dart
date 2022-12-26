@@ -19,28 +19,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Notification'),
-        centerTitle: true,
-        actions: [
-          Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(right: 15),
-                child: Text(
-                  dateFormate.toString(),
-                  style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
-                ),
-              ),
-            ],
-          )
-        ],
-        leading: Icon(
-          Icons.menu,
-          color: Colors.white,
-          size: 20,
-        ),
-      ),
+      
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: SingleChildScrollView(

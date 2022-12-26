@@ -20,13 +20,7 @@ class _WidgetPracticeState extends State<WidgetPractice> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: Icon(Icons.menu_rounded),
-        actions: [Icon(Icons.more_vert)],
-        centerTitle: true,
-        elevation: 0,
-        title: Text('Widgets'),
-      ),
+    
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: SingleChildScrollView(

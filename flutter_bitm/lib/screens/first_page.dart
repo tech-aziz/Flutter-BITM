@@ -127,10 +127,6 @@ class _FirstPageState extends State<FirstPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text('Student List'),
-      ),
       body: Padding(
         padding: EdgeInsets.all(10),
         child: ListView.builder(

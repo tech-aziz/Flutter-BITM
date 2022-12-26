@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
@@ -7,8 +9,8 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
-      width: 250,
+      height: 10,
+      width: double.infinity,
       decoration: BoxDecoration(
           color: Colors.blueAccent, borderRadius: BorderRadius.circular(20)),
       child: Center(
