@@ -21,6 +21,7 @@ class _ExpandedWidgetState extends State<ExpandedWidget> {
       length: 5,
       child: Scaffold(
         appBar: AppBar(
+          
           elevation: 0,
           centerTitle: true,
           title: Text('Expanded Widget'),

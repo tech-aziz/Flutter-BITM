@@ -9,15 +9,15 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 10,
-      width: double.infinity,
+      height: 30,
+      width: 200,
       decoration: BoxDecoration(
           color: Colors.blueAccent, borderRadius: BorderRadius.circular(20)),
       child: Center(
         child: Text(
           buttonName,
           style: TextStyle(
-              color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),
+              color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
         ),
       ),
     );

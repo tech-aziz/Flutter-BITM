@@ -26,18 +26,40 @@ class _SecondPageState extends State<SecondPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
-      body: Column(
-        children: [
-          Expanded(
-            
-            flex: 1,
+      appBar: AppBar(
+        leading: Icon(Icons.share),
+        title: Text('PreferredSize'),
+        centerTitle: true,
+        elevation: 0,
+        bottom: PreferredSize(
+          preferredSize: Size.fromHeight(50),
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
             child: Container(
-              alignment: Alignment.center,
+              height: 50,
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(12)),
+              child: ListTile(
+                leading: Icon(
+                  Icons.menu,
+                  color: Colors.black54,
+                ),
+                title: Text('Media Soft'),
+                trailing: Icon(Icons.more_vert),
+              ),
+            ),
+          ),
+        ),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                  color: Colors.green, borderRadius: BorderRadius.circular(12)),
               width: double.infinity,
-              color: Colors.green,
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(widget.name.toUpperCase()),
                   Text(widget.gender.toLowerCase()),
@@ -48,11 +70,16 @@ class _SecondPageState extends State<SecondPage> {
                 ],
               ),
             ),
-          ),
-          Container(
-              child: CustomButton(buttonName: 'Recharge Now'),
+            SizedBox(height: 10,),
+            Container(
+              child: InkWell(
+                onTap: () {
+                  print('Button is click');
+                },
+                child: CustomButton(buttonName: 'Recharge Now')),
             )
-        ],
+          ],
+        ),
       ),
     );
   }
