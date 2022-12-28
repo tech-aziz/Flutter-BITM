@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter_bitm/screens/customWidget.dart';
 import 'package:flutter_bitm/screens/first_page.dart';
+import 'package:flutter_bitm/screens/user_form.dart';
 import 'package:matcher/matcher.dart';
 import 'package:intl/intl.dart';
 
@@ -19,7 +20,23 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+      appBar: customAppBar(
+          IconButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => WidgetPractice()));
+              },
+              icon: Icon(
+                Icons.arrow_back_ios_new_rounded,
+                color: Colors.lightBlueAccent,
+              )),
+          Padding(
+            padding: const EdgeInsets.only(right: 12),
+            child: Icon(
+              Icons.more_vert,
+              color: Colors.lightBlueAccent,
+            ),
+          )),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: SingleChildScrollView(
@@ -100,6 +117,11 @@ class _HomePageState extends State<HomePage> {
                 subTitle: 'Upwork',
                 age: 32,
               ),
+              SizedBox(
+                height: 10,
+              ),
+              reuseableContainer(),
+
               ElevatedButton(
                   style:
                       ElevatedButton.styleFrom(backgroundColor: Colors.white),
@@ -115,6 +137,36 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
+    );
+  }
+
+  AppBar customAppBar(Widget backIcon, Widget actionIcon) {
+    return AppBar(
+      elevation: 10,
+      centerTitle: true,
+      backgroundColor: Colors.white,
+      leading: backIcon,
+      title: Text(
+        'Title',
+        style: TextStyle(
+            color: Colors.lightBlueAccent,
+            fontSize: 20,
+            fontWeight: FontWeight.normal),
+      ),
+      actions: [actionIcon],
+    );
+  }
+
+  Widget reuseableContainer() {
+    return Container(
+      height: 100,
+      width: 200,
+      child: Center(
+        child: Text('Custom Widget'),
+      ),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(width: 2, color: Colors.green)),
     );
   }
 }

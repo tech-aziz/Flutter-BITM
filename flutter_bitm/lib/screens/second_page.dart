@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bitm/screens/customButton.dart';
 import 'package:flutter_bitm/screens/first_page.dart';
 
+
 class SecondPage extends StatefulWidget {
   String name;
   String gender;
@@ -31,6 +32,8 @@ class _SecondPageState extends State<SecondPage> {
         title: Text('PreferredSize'),
         centerTitle: true,
         elevation: 0,
+
+        //PreferredSize Widget used
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(50),
           child: Padding(
@@ -50,6 +53,9 @@ class _SecondPageState extends State<SecondPage> {
             ),
           ),
         ),
+
+
+        
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
