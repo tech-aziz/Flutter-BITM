@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bitm/screens/customButton.dart';
 import 'package:flutter_bitm/screens/first_page.dart';
 
-
 class SecondPage extends StatefulWidget {
   String name;
   String gender;
@@ -53,9 +52,6 @@ class _SecondPageState extends State<SecondPage> {
             ),
           ),
         ),
-
-
-        
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -72,19 +68,43 @@ class _SecondPageState extends State<SecondPage> {
                   Text(widget.id.toString()),
                   Text(widget.physics.toString()),
                   Text(widget.maths.toString()),
-                  Text(widget.english.toString())
+                  Text(widget.english.toString()),
+                  customWidget(Colors.black, 'Book Now'),
                 ],
               ),
             ),
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
             Container(
               child: InkWell(
-                onTap: () {
-                  print('Button is click');
-                },
-                child: CustomButton(buttonName: 'Recharge Now')),
-            )
+                  onTap: () {
+                    print('Button is click');
+                  },
+                  child: CustomButton(buttonName: 'Recharge Now')),
+            ),
+            Spacer(),
+            customWidget(Colors.green, 'Share Now'),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget customWidget(Color color, String buttonName) {
+    return Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: color, width: 1)),
+      child: TextButton.icon(
+        onPressed: () {},
+        label: Text(
+          "Share Now",
+          style: TextStyle(color: Colors.green),
+        ),
+        icon: Icon(
+          Icons.share,
+          color: color,
         ),
       ),
     );

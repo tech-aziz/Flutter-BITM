@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bitm/screens/customButton.dart';
 import 'package:flutter_bitm/screens/first_page.dart';
 import 'package:flutter_bitm/screens/home_page.dart';
+import 'package:flutter_bitm/screens/list_listTyle.dart';
+import 'package:flutter_bitm/screens/row_colum_demo.dart';
 import 'package:flutter_bitm/screens/second_page.dart';
 import 'package:flutter_bitm/screens/textCustomWidget.dart';
 import 'package:flutter_bitm/screens/user_form.dart';
@@ -18,7 +20,7 @@ class _ExpandedWidgetState extends State<ExpandedWidget> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 5,
+      length: 7,
       child: Scaffold(
         appBar: AppBar(
           
@@ -46,6 +48,14 @@ class _ExpandedWidgetState extends State<ExpandedWidget> {
               icon: Icon(Icons.add_a_photo_rounded),
               text: 'Add',
             ),
+            Tab(    
+              icon: Icon(Icons.home),
+              text: 'Row & Column',
+            ),
+            Tab(    
+              icon: Icon(Icons.home),
+              text: 'List & ListTile',
+            ),
           ]),
         ),
         body: TabBarView(
@@ -54,7 +64,9 @@ class _ExpandedWidgetState extends State<ExpandedWidget> {
             SecondPage(english: 90,gender: 'girl', id: 01, maths: 79,name: 'azizul',physics: 50,),
             HomePage(),
             FirstPage(),
-           CustomButton(buttonName: 'Media Soft',)
+           CustomButton(buttonName: 'Media Soft',),
+           RowColumWidget(),
+           ListListTile()
 
           ],
           )
